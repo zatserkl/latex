@@ -1,0 +1,24 @@
+        Template to use pdflatex
+        ------------------------
+
+The pdflatex can be used to create pdf or dvi files. Default mode is pdf. 
+In dvi mode pdflatex is a replacement for the latex. To set the latex mode use
+
+pdflatex --output-format dvi filename
+
+NB: latex uses graphics .epc
+pdflatex uses graphics formats .png, .pdf, .jpg or .mps
+
+To use this template rename it and replace the name of the picture file 
+latex_example_pic to your picture file name. 
+It's recommended do not specify picture file name extension at all. By default 
+(see "The Not So Short Introduction to LATEX 2epsilon.pdf", chapter 4.7.7): 
+
+LaTEX will look for .eps, and pdfLaTEX will try to include a file with the 
+extension .png, .pdf, .jpg or .mps (in that order).
+
+Settings for the command :make in the .vimrc:
+
+" set makeprg=latex\ %	" to latex file in the current window
+set makeprg=pdflatex\ --output-format\ dvi\ %	" to latex file with pdflatex in the current window
+" set makeprg=pdflatex\ %	" to pdflatex file in the current window

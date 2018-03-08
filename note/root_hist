@@ -1,0 +1,479 @@
+//-- Sun Oct 10 20:41:17 CDT 2010
+.x pulse_function.C+
+test_IT(1,30,40, 1,30, 0,200)
+.q
+//-- Sun Oct 10 20:44:12 CDT 2010
+test_IT(1,30,40, 1,30, 0,200)
+.L pulse_function.C+
+test_IT(1,30,40, 100,30, 0,200)
+test_IT(0.1,30,40, 100,30, 0,200)
+//-- Sun Oct 10 20:51:45 CDT 2010
+.L pulse_function.C+
+test_IT(0.1,30,40, 100,30, 0,200)
+test_IT(1,30,40, 100,30, 0,200)
+test_IT(5,30,40, 100,30, 0,200)
+test_IT(1,200,40, 100,30, 0,1000)
+test_IT(1,100,40, 100,30, 0,1000)
+test_IT(1,100,4, 100,30, 0,1000)
+test_IT(1,1,40, 100,30, 0,1000)
+//-- Sun Oct 10 21:14:22 CDT 2010
+.L pulse_function.C+
+test_IT(1,1,40, 100,30, 0,500)
+.q
+//-- Sun Oct 10 21:15:31 CDT 2010
+.L pulse_function.C+
+test_IT(1,1,40, 100,30, 0,500)
+.q
+//-- Sun Oct 10 21:16:15 CDT 2010
+.L pulse_function.C+
+test_IT(1,1,40, 100,30, 0,500)
+test_IT(0.1,1,40, 100,30, 0,500)
+.q
+//-- Sun Oct 10 21:17:24 CDT 2010
+.L pulse_function.C+
+test_IT(1,10,40, 100,30, 0,500)
+fun_IT12
+fun_IT12->Integral(0,500)
+test_IT(1,10,40, 100,30, 0,300)
+test_IT(1,20,40, 100,30, 0,300)
+test_IT(1,40,40, 100,30, 0,300)
+test_IT(1,80,40, 100,30, 0,300)
+test_IT(10,10,40, 100,30, 0,300)
+test_IT(40,10,40, 100,30, 0,300)
+test_IT(1,1,40, 100,30, 0,300)
+test_IT(40,40,40, 100,30, 0,300)
+test_IT(1,1,40, 100,30, 0,300)
+test_IT(40,1,40, 100,30, 0,300)
+test_IT(40,40,1, 100,30, 0,300)
+test_IT(1,40,1, 100,30, 0,300)
+test_IT(1,1,1, 100,30, 0,300)
+test_IT(1,1,20, 100,30, 0,300)
+test_IT(1,1,40, 100,30, 0,300)
+test_IT(1,20,40, 100,30, 0,300)
+test_IT(1,20,1, 100,30, 0,300)
+test_IT(1,5,40, 100,30, 0,300)
+1.8/2.7
+test_IT(1,1,40, 100,30, 0,300)
+test_IT(1,1,40, 100,0, 0,300)
+test_IT(1,10,40, 100,0, 0,300)
+test_IT(1,20,20, 100,0, 0,300)
+test_IT(1,1,40, 100,0, 0,300)
+test_IT(1,5,35, 100,0, 0,300)
+test_IT(1,20,20, 10,0, 0,300)
+test_IT(1,10,20, 10,50, 0,200)
+test_IT(1,5,20, 10,50, 0,200)
+test_IT(1,5,10, 10,50, 0,200)
+log()
+test_IT(1,1,10, 10,50, 0,200)
+test_IT(0.1,5,20, 10,50, 0,200)
+//-- Sun Oct 10 23:34:25 CDT 2010
+.L pulse_function.C+
+test_IT(1,5,20, 10,50, 0,200)
+test_IT(1,5,10, 10,50, 0,200)
+//-- Sat Oct 23 23:07:55 CDT 2010
+.x pulse_function.C+
+fit()
+,q
+.w
+.q
+//-- Tue Feb 22 13:03:27 CST 2011
+TF1* erfc = new TF1("erfc", "TMath::Erfc(x)", -2,2)
+erfc->Draw()
+TF1* erfc = new TF1("erfc", "TMath::Erfc(x)", -3,3)
+erfc->Draw()
+pic("erfc")
+//-- Tue Feb 22 13:10:13 CST 2011
+TF1* erfc = new TF1("erfc", "TMath::Erfc(x)", -3,3)
+erfc->SetTitle("")
+erfc->Draw()
+pic("erfc")
+.q
+//-- Tue Feb 22 15:24:43 CST 2011
+TF1* erf = new TF1("erf", "TMath::Erf(x)", -3,3); erf->SetTitle("");
+erf->Draw()
+pic("erf")
+//-- Tue Feb 22 15:47:53 CST 2011
+gStyle->SetPadGridX(0)
+gStyle->SetPadGridY(0)
+gStyle->SetLabelSize(.075,"xyz");
+TF1* erf = new TF1("erf", "TMath::Erf(x)", -3,3); erf->SetTitle("");
+TF1* erfc = new TF1("erfc", "TMath::Erfc(x)", -3,3); erfc->SetTitle("");
+new TCanvas;
+erf->Draw()
+new TCanvas;
+erfc->Draw()
+pic("erfc")
+pic("erf")
+.q
+//-- Tue Feb 22 16:16:34 CST 2011
+.x erferfc.C
+gPad->SaveAs("erf.pdf")
+gPad->SaveAs("erfc.pdf")
+.q
+//-- Mon Feb 28 18:05:02 CST 2011
+.L pulse.tex.C+
+.q
+//-- Mon Feb 28 18:06:10 CST 2011
+.L pulse.tex.C+
+.q
+//-- Mon Feb 28 18:08:02 CST 2011
+.L pulse.tex.C+
+.
+.q
+//-- Mon Feb 28 18:09:40 CST 2011
+.q
+//-- Mon Feb 28 18:56:30 CST 2011
+.q
+//-- Mon Feb 28 18:58:03 CST 2011
+.q
+//-- Mon Feb 28 18:58:32 CST 2011
+plot_fp()
+.q
+//-- Mon Feb 28 19:03:03 CST 2011
+plot_fp()
+plot_fp(40,60)
+plot_fp(48,52)
+plot_fp(49.5,52)
+plot_fp(49.5,51.5)
+.q
+//-- Mon Feb 28 19:05:38 CST 2011
+plot_fp(49.5,51.5)
+nogri()
+plot_fp(49.5,51.5)
+//-- Mon Feb 28 19:27:52 CST 2011
+//-- Mon Feb 28 19:28:38 CST 2011
+//-- Mon Feb 28 19:33:11 CST 2011
+plot_fp(49.5,51.5)
+.q
+//-- Mon Feb 28 19:33:32 CST 2011
+plot_fp()
+.q
+//-- Mon Feb 28 19:34:02 CST 2011
+plot_fp()
+png("p")
+pic("p")
+//-- Mon Feb 28 19:36:23 CST 2011
+plot_fp()
+plot_fp(49.5,55)
+.q
+//-- Mon Feb 28 19:37:10 CST 2011
+plot_fp(49.5,55)
+pic("p")
+nextcan()
+newcan()
+//-- Mon Feb 28 19:51:17 CST 2011
+plot_fp()
+pic("p")
+.q
+//-- Mon Feb 28 19:58:30 CST 2011
+plot_fp()
+pic("p")
+TPaveText* pave = new TPaveText(0.60,0.50, 0.80,0.80, "NDC")
+pave->AddText("#tau_1 = 0.050")
+pave->AddText("#tau_2 = 1.0")
+pave->Draw()
+.q
+//-- Mon Feb 28 20:08:03 CST 2011
+.q
+//-- Mon Feb 28 20:08:30 CST 2011
+plot_fp()
+.q
+//-- Mon Feb 28 20:10:53 CST 2011
+.q
+//-- Mon Feb 28 20:12:20 CST 2011
+plot_fp()
+.q
+//-- Mon Feb 28 20:13:10 CST 2011
+plot_fp()
+.q
+//-- Mon Feb 28 20:14:27 CST 2011
+plot_fp()
+.q
+//-- Mon Feb 28 20:15:09 CST 2011
+plot_fp()
+.q
+//-- Mon Feb 28 20:16:49 CST 2011
+plot_fp()
+//-- Mon Feb 28 20:18:24 CST 2011
+plot_fp()
+.q
+plot_fp()
+.L plot_fp.C+
+.L plot.tex.C+
+.L pulse.tex.C+
+.L utils.C+
+.L pulse.tex.C+
+plot_fp()
+.q
+.L utils.C+
+.L pulse.tex.C+
+plot_fp()
+gStyle->SetLabelSize(.05,"xyz")
+gStyle->SetTitleSize(.05,"xyz")
+plot_fp()
+gStyle->SetLabelSize(.06,"xyz")
+gStyle->SetTitleSize(.06,"xyz")
+plot_fp()
+//-- Mon Feb 28 20:41:35 CST 2011
+plot_fp()
+pic("p")
+//-- Mon Feb 28 20:55:50 CST 2011
+plot_fp()
+//-- Mon Feb 28 20:56:42 CST 2011
+plot_fp()
+.q
+//-- Mon Feb 28 20:58:48 CST 2011
+plot_fp()
+.q
+//-- Mon Feb 28 21:01:31 CST 2011
+plot_fp()
+//-- Mon Feb 28 21:02:06 CST 2011
+plot_fp()
+pic("p")
+.q
+//-- Mon Feb 28 21:11:40 CST 2011
+plot_fp()
+//-- Mon Feb 28 21:12:21 CST 2011
+plot_fp()
+.q
+//-- Mon Feb 28 21:12:56 CST 2011
+plot_fp()
+.q
+//-- Mon Feb 28 21:13:42 CST 2011
+plot_fp()
+//-- Mon Feb 28 21:14:05 CST 2011
+plot_fp()
+pic("p")
+.q
+//-- Tue Mar 1 11:55:36 CST 2011
+plot_fp()
+new TCanvas;
+//-- Tue Mar 1 12:02:12 CST 2011
+plot_fp()
+//-- Tue Mar 1 12:04:25 CST 2011
+plot_fp()
+newcan()
+//-- Tue Mar 1 12:07:59 CST 2011
+plot_fp()
+newcan()
+//-- Tue Mar 1 12:10:43 CST 2011
+plot_fp()
+newcan()
+//-- Tue Mar 1 12:11:58 CST 2011
+plot_fp()
+//-- Tue Mar 1 12:12:26 CST 2011
+plot_fp()
+ftemp()->GetTitle()
+//-- Tue Mar 1 12:13:30 CST 2011
+plot_fp()
+f-ftempClone()
+f-ftemp()
+f=ftemp()
+newcan()
+f->Draw()
+f->GetXaxis()
+f->GetXaxis()->GetTitle()
+f->GetXaxis()->SetTitle("ns")
+newcan()
+//-- Tue Mar 1 12:19:59 CST 2011
+plot_fp()
+.! vi rootlogon.C
+//-- Tue Mar 1 12:26:35 CST 2011
+plot_fp()
+//-- Tue Mar 1 12:27:09 CST 2011
+plot_fp()
+//-- Tue Mar 1 13:52:56 CST 2011
+plot_fp()
+.q
+//-- Tue Mar 1 14:04:37 CST 2011
+plot_p()
+plot_P()
+plot_P(-0.5,50,0, 1,0.050,1.0,40)
+plot_P(-0.5,100,0, 1,0.050,1.0,40)
+pic("Pscint")
+pic("pulse")
+plot_P(-0.5,150,0, 1,0.050,1.0,40)
+ftemp()->Integral()
+ftemp()->Integral(0,150))
+ftemp()
+f=ftemp()
+f->Integral(0,150))
+f->Integral(0,150)
+plot_P(-0.5,200,0, 1,0.050,1.0,40)
+ftemp()->Integral(0,200)
+ftemp()->Integral()
+plot_P(-0.5,80,0, 1,0.050,1.0,40)
+ftemp()->GetMaximumX()
+ftemp()->GetMaximum()
+2.27430560658991553e-02/2.72
+ftemp()->GetX(8.36141767128645297e-03, 20,80)
+ftemp()->GetX(ftemp()->GetMaximum()/2.72, ftemp()->GetMaximumX(),80)
+.q
+//-- Tue Mar 1 14:50:20 CST 2011
+plot_P()
+.q
+//-- Wed Mar 2 00:06:08 CST 2011
+plot_P()
+plot_P(-0.5,80,0, 1,0.050,1.0,40)
+plot_P(-0.5,80,0, 1,0.,1.0,40)
+plot_P(-0.5,80,0, 1,0.,10.0,40)
+plot_P(-0.5,80,0, 1,0.,10.0,0)
+.q
+//-- Sun Mar 6 12:16:26 CST 2011
+.L pulse.tex.C+
+plot_P()
+//-- Mon Mar 7 12:27:58 CST 2011
+.q
+//-- Mon Mar 7 12:30:31 CST 2011
+TMath::Erfc(-100.)
+TMath::Erfc(-10.)
+.q
+//-- Mon Mar 7 19:39:31 CST 2011
+.q
+//-- Mon Mar 7 19:42:14 CST 2011
+plot_Psigma()
+plot_Psigma(-10,100,0, 1,0.050,1.0,40,1)
+plot_Psigma(-10,100,0, 1,0.050,1.0,40,10)
+.q
+//-- Mon Mar 7 19:48:13 CST 2011
+plot_Psigma(-10,100,0, 1,0.050,1.0,10,10)
+plot_Psigma(-10,100,30, 1,0.050,1.0,10,10)
+plot_Psigma(-10,100,30, 1, 1.0,10,10,1)
+plot_Psigma(-10,100,30, 1, 1.0,10,10,0)
+//-- Mon Mar 7 20:07:18 CST 2011
+plot_Psigma(-10,100,30, 1,0.050,1.0,10,10)
+//-- Mon Mar 7 20:09:06 CST 2011
+plot_Psigma(-10,100,30, 1,0.050,1.0,10,10)
+plot_Psigma(-10,100,30, 1,0.050,1.0,10,1)
+log()
+//-- Mon Mar 7 20:12:00 CST 2011
+.q
+//-- Mon Mar 7 20:12:21 CST 2011
+plot_Psigma(-10,100,30, 1,0.050,1.0,10,1)
+log()
+plot_Psigma(-10,100,30, 1,0.050,1.0,10,2)
+plot_Psigma(-10,100,30, 1,0.050,1.0,10,5)
+plot_Psigma(-10,100,30, 1,0.050,1.0,10,0)
+plot_Psigma(-10,100,30, 1,0.050,1.0,10,1)
+plot_Psigma(-10,100,30, 1, 0.050,1.0,10,1)
+plot_Psigma(-10,100,30, 1, 0,1.0,10,1)
+plot_Psigma(-10,100,30, 1, 0.050,1.0,1,1)
+plot_Psigma(-10,100,30, 1, 0.1,10.0,10,1)
+//-- Mon Mar 7 22:06:58 CST 2011
+plot_Psigma(-10,100,30, 1, 0.1,10.0,10,1)
+plot_Psigma(-10,100,30, 1, 0.1,10.0,0,1)
+plot_Psigma(-10,100,30, 1, 0.1,20.0,10,1)
+plot_Psigma(-10,100,30, 1, 0.1,20.0,20,1)
+plot_Psigma(-10,200,30, 1, 0.1,20.0,20,1)
+.q
+//-- Mon Mar 7 23:30:49 CST 2011
+plot_Psigma(-10,200,30, 1, 0.1,20.0,20,1)
+plot_Psigma(-10,200,30, 1, 0.1,20.0,0,1)
+plot_Psigma(-10,200,30, 1, 0.050,2,40,1)
+plot_Psigma(-10,200,30, 1, 0.050,2,40,0)
+plot_Psigma(-10,200,30, 1, 0.050,2,40,0.1)
+plot_Psigma(-10,200,0, 1, 0.050,1,40,1)
+plot_Psigma(-10,200,0, 1, 0.050,1,40,2)
+plot_Psigma(-10,100,0, 1, 0.050,1,40,2)
+//-- Tue Mar 8 00:01:42 CST 2011
+plot_Psigma(-10,100,0, 1, 0.050,1,40,2)
+plot_Psigma(-10,100,0, 1, 0.050,2,40,2)
+plot_Psigma(-10,100,0, 1, 0.050,5,40,2)
+//-- Tue Mar 8 00:05:25 CST 2011
+plot_p()
+//-- Tue Mar 8 00:06:15 CST 2011
+plot_p()
+plot_P()
+plot_Psigma()
+5*log(40./0.050)
+5*log(40./5)
+log(20)
+log(8.)
+//-- Tue Mar 8 00:14:30 CST 2011
+plot_p()
+pic("pulse")
+plot_P()
+pic("Pscint")
+plot_Psigma()
+pic("Psigma")
+plot_Psigma(-20,100,0, 1, 0.050,5,40,2)
+log()
+//-- Tue Mar 8 00:29:20 CST 2011
+plot_Psigma(-30,100,0, 1, 0.050,5,40,2)
+log()
+plot_Psigma(-100,100,0, 1, 0.050,5,40,2)
+log()
+plot_Psigma(-100,0,0, 1, 0.050,5,40,2)
+log()
+plot_Psigma(-100,-50,0, 1, 0.050,5,40,2)
+log()
+plot_Psigma(-100,-90,0, 1, 0.050,5,40,2)
+log()
+plot_Psigma(-100,-70,0, 1, 0.050,5,40,2)
+log()
+plot_Psigma(-80,-70,0, 1, 0.050,5,40,2)
+log()
+.q
+//-- Tue Mar 8 00:36:27 CST 2011
+plot_Psigma(-100,0,0, 1, 0.050,5,40,2)
+log()
+plot_Psigma(-100,-40,0, 1, 0.050,5,40,2)
+log()
+plot_Psigma(-100,100,0, 1, 0.050,5,40,2)
+log()
+plot_Psigma(-10,100,0, 1, 0.050,5,40,1e-10)
+plot_Psigma(-10,100,0, 1, 0.050,5,40,1e-16)
+plot_Psigma(-10,100,0, 1, 0.050,5,40,1e-20)
+plot_Psigma(-10,100,0, 1, 0.050,5,40,1e-5)
+plot_Psigma(-10,10,0, 1, 0.050,5,40,1e-5)
+plot_Psigma(-1,1,0, 1, 0.050,5,40,1e-5)
+plot_Psigma(-0.1,0.1,0, 1, 0.050,5,40,1e-5)
+plot_Psigma(-0.1,0.1,0, 1, 0.050,5,40,1e-2)
+plot_Psigma(-0.1,0.1,0, 1, 0.050,5,40,1e-1)
+.q
+//-- Tue Mar 8 11:27:57 CST 2011
+.q
+//-- Tue Mar 8 11:28:42 CST 2011
+plot_Psigma_compare()
+//-- Tue Mar 8 11:30:08 CST 2011
+plot_Psigma_compare()
+//-- Tue Mar 8 11:37:36 CST 2011
+plot_Psigma_compare()
+.q
+//-- Tue Mar 8 11:39:41 CST 2011
+plot_Psigma_compare(-10,100,0, 1, 0.050,5.0,40,2.0)
+//-- Tue Mar 8 18:04:52 CST 2011
+plot_Psigma_compare(-10,100,0, 1, 0.050,5.0,40,2.0)
+.q
+//-- Tue Mar 8 18:05:29 CST 2011
+plot_Psigma_compare(-10,100,0, 1, 0.050,5.0,40,2.0)
+.ls
+gROOT->Get("fun_Psigma_std")
+//plot_Psigma_compare(-10,100,0, 1, 0.050,5.0,40,2.0)
+TF1* fun_Psigma_std = new TF1("fun_Psigma_std", fPsigma_std, -10,100,6)
+Double_t par[] = {1, 0, 0.050, 5, 40, 2};
+fun_Psigma_std->SetParameters(par)
+fun_Psigma_std->Draw()
+fun_Psigma_std->Eval(10)
+Psigma_std(10, 0.050, 5, 40, 2)
+ITtausigma_std(10, 5, 40, 2)
+ITtausigma_std(10, 0.050, 40, 2)
+//-- Wed Mar 9 09:15:33 CST 2011
+ITtausigma_std(10, 0.050, 40, 2)
+.q
+//-- Wed Mar 9 09:19:09 CST 2011
+ITtausigma_std(10, 0.050, 40, 2)
+exp(1)
+exp(2*2./2./0.050/0.050)
+exp(2.*2./2./0.050/0.050)
+2.*2./2./0.050/0.050
+.q
+//-- Wed Mar 9 09:32:41 CST 2011
+.q
+//-- Wed Mar 9 09:33:10 CST 2011
+ITtausigma_std(10, 0.050, 40, 2)
+.q
+//-- Wed Mar 9 09:33:56 CST 2011
+plot_Psigma_compare()
+//-- Wed Mar 9 09:35:02 CST 2011
+plot_Psigma_compare()

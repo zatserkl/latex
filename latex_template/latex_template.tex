@@ -1,0 +1,103 @@
+\author{Andriy Zatserklyaniy, zatserkl@fnal.gov}
+\documentclass[english]{article}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}   % encoding ISO-8859-9
+\usepackage{graphicx}
+\usepackage{esint}              % integral symbols
+\usepackage{parskip}            % for \smallskip, \medskip and \bigskip
+\usepackage{cancel}             % to cancel out variables in text
+\usepackage[active]{srcltx}     % enables reverse search by Shift-LeftClick in dvi file
+\usepackage{listings}		% to include C++ code
+
+%-- function to scale pictures --%
+\makeatletter
+\def\ScaleIfNeeded{%
+\ifdim\Gin@nat@width>\linewidth
+\linewidth
+\else
+\Gin@nat@width
+\fi
+}
+
+\begin{document}
+
+\title{Some Handy Properties of the Gaussian}
+
+\maketitle
+
+\section{Area of the Gaussian}
+
+Let's consider histogram with bin width of $1/2$ units (MeV on the figure), Fig.\ref{fig:hgaus}.
+
+\begin{figure}[h]
+\centering
+% \begin{minipage}[t]{0.75 \linewidth}
+\begin{minipage}[t]{1.0 \linewidth}
+\includegraphics[width=\ScaleIfNeeded]{latex_template_pic}
+\caption{Histogram and Gaussian fit}
+\label{fig:hgaus}
+\end{minipage}
+\end{figure}
+
+Calculate the number of events in the histogram. 
+The number of events is proportional to the histogram area
+$$
+S = N \cdot s_1
+$$
+where $s_1$ is area which corresponds to one event. 
+The area of every histogram bin is a product of the bin width $w$ and the number of events in the bin.
+Therefore, the area which corresponds to one event is a product of the bin width $w$ and 1: 
+$$
+s_1 = w \cdot 1 = w
+$$
+To calculate an area of the Gaussian-shape histogram in the Fig.\ref{fig:hgaus} let's approximate it by the area of the Gaussian
+$$
+g(x) = Ae^{-\dfrac{(x-x_0)^2}{2\sigma^2}}
+$$
+Fit results are:
+%
+\begin{align*}
+A = 198.2 \\
+\sigma = 0.993
+\end{align*}
+%
+Calculate the area under the Gaussian
+%
+\begin{align*}
+%-- I'm using & to left align the lines (default is right aligning)
+S = & \int_{-\infty}^{+\infty} A e^{-\frac{(x-x_0)^2}{2\sigma^2}} \\
+= & \sqrt{2\pi} \sigma A \underbrace{\int_{-\infty}^{+\infty} \frac{1}{\sqrt{2\pi}} e^{-\frac{(x-x_0)^2}{2\sigma^2}}}_{= 1} \\
+= & \sqrt{2\pi} \sigma A \\
+\approx & 2.5 \cdot \sigma \cdot A
+\end{align*}
+%
+Express this area in terms of the number of events $N$ and the area of the one event $s_1$:
+\begin{align*}
+S = & N \cdot s_1 \\
+= & N \cdot w
+\end{align*}
+hence
+$$
+N = S / w 
+$$
+or
+$$
+N = \sqrt{2\pi} \cdot \sigma \cdot A / w
+$$
+Because $\sqrt{2\pi} \approx 2.5066$
+$$
+N \approx 2.5 \cdot \sigma \cdot A / w
+$$
+% For the histogram on the Fig.\ref{fig:hgaus}
+The histogram on the Fig.\ref{fig:hgaus} was generated for 1000 events Gaussian-distributed with $\sigma$ = 1. 
+In our approximation
+\begin{align*}
+\intertext{the area under the Gaussian}
+S \approx 2.5 \cdot 198.2 \cdot 0.993 = 492.0 \\
+\intertext{the number of events for $w$ = 0.5~MeV}
+N \approx 2.5 \cdot 198.2 \cdot 0.993 / 0.5  = 984.1 \\
+\end{align*}
+
+\end{document}

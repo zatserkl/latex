@@ -1,0 +1,7 @@
+.DS_Store
+*.aux
+*.log
+*.gz
+*_C.d
+*_C.so
+*_C_ACLiC_dict_rdict.pcm

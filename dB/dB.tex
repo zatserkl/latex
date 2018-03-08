@@ -1,0 +1,81 @@
+\author{Andriy Zatserklyaniy, zatserkl@fnal.gov}
+\documentclass[12pt,english]{article}   % NB: 12pt font
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}   % encoding ISO-8859-9
+\usepackage{graphicx}
+\usepackage{esint}              % integral symbols
+\usepackage{parskip}            % for \smallskip, \medskip and \bigskip
+\usepackage{cancel}             % to cancel out variables in text
+\usepackage[active]{srcltx}     % enables reverse search by Shift-LeftClick in dvi file
+
+\usepackage[margin=1in]{geometry}       % "normal" page margins
+
+%-- function to scale pictures --%
+\makeatletter
+\def\ScaleIfNeeded{%
+\ifdim\Gin@nat@width>\linewidth
+\linewidth
+\else
+\Gin@nat@width
+\fi
+}
+
+\begin{document}
+
+\title{Definition of the dB}
+
+\maketitle
+
+\paragraph{Defenitions}
+\ 
+
+A Bel is a measure of the ratio between the two levels. Decibel is 1/10th of the Bel.
+
+A Bel is a decimal logarithm of ratio of the squares of two levels:
+$$
+R_{Bel} = lg\dfrac{u^2_2}{u^2_1} \\
+$$
+correspondently, decibel (dB) is
+$$
+R_{dB} = 10lg\dfrac{u^2_2}{u^2_1} \\
+$$
+Commonly, this formula has been written as
+$$
+R_{dB} = 20lg\dfrac{u_2}{u_1} \\
+$$
+There are two comments to the idea of the decibel:
+\begin{itemize}
+\item in many cases is convenient to use squares of two levels than the levels itself.
+For example, for sound and electromagnetic waves the intensity is equal to square of the amplitude. 
+\item human perception works in logarithmic scale: two sounds with amplitude different in 10 times will be percepted by the ears as different in 2 times. 
+\end{itemize}
+
+\paragraph{Examples}
+\ 
+ 
+20 dB
+
+\begin{align*}
+20 = 20lg(u_2/u_1) \\
+u_2/u_1 = 10
+\end{align*}
+
+10 dB
+
+\begin{align*}
+10 = 20lg(u_2/u_1) \\
+u_2/u_1 = 10^{0.5} = 3.162 \approx 3.2
+\end{align*}
+
+6 dB
+
+\begin{align*}
+6 = 20lg(u_2/u_1) \\
+u_2/u_1 = 10^{0.3} = 1.995 \approx 2.0
+\end{align*}
+
+
+
+\end{document}

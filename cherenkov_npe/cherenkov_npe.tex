@@ -1,0 +1,155 @@
+\author{Andriy Zatserklyaniy, zatserkl@fnal.gov}
+\documentclass[english]{article}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}   % encoding ISO-8859-9
+\usepackage{graphicx}
+\usepackage{esint}              % integral symbols
+\usepackage{parskip}            % for \smallskip, \medskip and \bigskip
+\usepackage{cancel}             % to cancel out variables in text
+\usepackage[active]{srcltx}     % enables reverse search by Shift-LeftClick in dvi file
+\usepackage{listings}		% to include C++ code
+
+%-- function to scale pictures --%
+\makeatletter
+\def\ScaleIfNeeded{%
+\ifdim\Gin@nat@width>\linewidth
+\linewidth
+\else
+\Gin@nat@width
+\fi
+}
+
+\begin{document}
+
+% \title{Cherenkov signal from the microchannel-based photomultiplier Photek 240}
+\title{Calculations for time-of-flight beamline system for Cherenkov signal from the microchannel-based photomultiplier Photek 240}
+
+\maketitle
+
+\section{Kinematics for TOF calculations}
+
+We would like to develop time-of-flight (TOF) method to separate protons from light particle contaminated the proton beam. 
+
+Because magnetic field selects particles with the same momentum, 
+the beam particles have momentum $p$ which is momentum of proton with given kinetic energy $T$. 
+Let's $E$ is a total energy of proton with kinetic energy $T$, $E = T+M$, where $M$ is proton's mass. 
+\begin{align*}
+p^2 & = E^2 - M^2 \\
+p^2 & = (T+M)^2 - M^2 \\
+& = T^2 + 2MT
+\end{align*}
+\begin{align}
+p = \sqrt{2MT+T^2}
+\end{align}
+%
+NB: the $\sqrt{2MT}$ in the expression for $p$ is non-relativistic momentum. 
+
+Calculate a velocity of particle with mass $m$ and momentum $p$.
+%
+\begin{align*}
+p = \frac{m\beta}{\sqrt{1-\beta^2}} \\ 
+p^2(1-\beta^2) = m^2\beta^2 \\ 
+p^2 = (p^2+m^2)\beta^2 \\ 
+\beta^2 = \frac{p^2}{p^2+m^2}
+\end{align*}
+%
+\begin{align}
+\beta = \frac{p}{\sqrt{p^2+m^2}}
+\end{align}
+
+\subsection*{Summary of kinematics}
+
+Proton with kinetic energy T has a momentum 
+\begin{align*}
+p = \sqrt{2MT+T^2}
+\end{align*}
+Particle with mass $m$ and momentum $p$ has a velocity
+\begin{align*}
+\beta = \frac{p}{\sqrt{p^2+m^2}}
+\end{align*}
+
+\section{The number of photons}
+
+Landau-Lifshitz expression for the slowing-down force which acts on the particle which emits the Cherenkov radiation in the frequency range ($\omega, \omega+d\omega$):
+
+$$
+% dF = \frac{e^2}{c^2} \Bigl( 1 - \frac1{\beta^2 n^2} \Bigr) \omega d\omega
+dF = \frac{e^2}{c^2} \Bigl( 1 - \frac1{\beta^2 n^2(\omega)} \Bigr) \omega d\omega
+$$
+where $\beta$ is a particle speed in terms of speed of light, $n(\omega)$ is the refraction index of the medium for the frequency $\omega$. Note that the $\omega$ is a cyclic frequency here, 
+$\omega = 2\pi\nu$. 
+The force produces a work 
+$$
+dW = Fdx
+$$
+on the path $dx$. This work is the energy loss of the particle on the Cherenkov radiation: 
+$$
+\frac{d^2W}{dx d\omega} = 
+\frac{e^2}{c^2} \Bigl( 1 - \frac1{\beta^2 n^2(\omega)} \Bigr) \omega
+$$
+Because the energy of the photon is 
+$$
+h\nu = \hbar\omega
+$$
+the number of photons emitted in the energy range $dW$ is 
+$$
+dN = \frac1{\hbar\omega}dW
+$$
+Now, 
+$$
+\frac{d^2N}{dxd\omega} = \frac{e^2}{\hbar c^2} \Bigl( 1 - \frac1{\beta^2 n^2(\omega)} \Bigr)
+$$
+Express in terms of the wavelength $\lambda$.
+\begin{align*}
+& \omega = 2\pi\nu = 2\pi\frac{c}{\lambda} \\
+& d\omega = -\frac{2\pi c}{\lambda^2} d\lambda \\
+& \frac{d^2N}{dxd\lambda} = \frac{2\pi e^2}{\hbar c} \frac1{\lambda^2}
+\Bigl( 1 - \frac1{\beta^2 n^2(\lambda)} \Bigr)\\
+\end{align*}
+Now 
+\begin{align*}
+\frac{d^2N}{dxd\lambda} & = - \frac{d^2N}{dxd\omega} \frac{d\omega}{d\lambda} \\
+                        & = - \frac{2\pi c}{\lambda^2} \frac{d^2N}{dxd\omega}
+\end{align*}
+Finally (omit minus sign) 
+$$
+\frac{d^2N}{dxd\lambda} = \frac{2\pi \alpha}{\lambda^2} 
+\Bigl( 1 - \frac1{\beta^2 n^2(\lambda)} \Bigr)
+$$
+where
+$$
+\alpha = \frac{e^2}{\hbar c} \approx \frac1{137}
+$$
+
+The number of Cherenkov photons in the wavelength range from $\lambda_1$ to $\lambda_2$ emitted by particle on the path $l$ is 
+\begin{align*}
+N = 2\pi \alpha l
+\Bigl( 1 - \frac1{\beta^2 n^2(\lambda)} \Bigr)
+\Bigl(\frac1{\lambda_1} - \frac1{\lambda_2} \Bigr)
+\end{align*}
+
+\section{Cherenkov radiator: Quarts (fused silica)}
+
+Index of refraction.
+
+Dispersion.
+No information.
+
+Light attenuation length.
+
+\section{The number of photoelectrons}
+
+Properties of the Photek 240 microchannel based photomultiplier (MCP PMT). 
+
+% Integral sensitivity: 145 $\alphaA/lm$. 
+Integral sensitivity: 145 $\mu A/lm$. 
+
+Spectral sensitivity. 
+
+Quantum efficiency.
+
+
+
+\end{document}

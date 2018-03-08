@@ -1,0 +1,91 @@
+\author{Andriy Zatserklyaniy, zatserkl@fnal.gov}
+\documentclass[english]{article}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}   % encoding ISO-8859-9
+\usepackage{graphicx}
+\usepackage{esint}              % integral symbols
+\usepackage{parskip}            % for \smallskip, \medskip and \bigskip
+\usepackage{cancel}             % to cancel out variables in text
+\usepackage[active]{srcltx}     % enables reverse search by Shift-LeftClick in dvi file
+
+%-- function to scale pictures --%
+\makeatletter
+\def\ScaleIfNeeded{%
+\ifdim\Gin@nat@width>\linewidth
+\linewidth
+\else
+\Gin@nat@width
+\fi
+}
+
+\begin{document}
+
+\title{Error on ratio}
+
+\maketitle
+
+\section{Error on ratio}
+
+Derive the error on the ratio $r = x_1/x_2$.
+The differential of $r$ is
+
+\begin{align*}
+dr &= \frac{dx_1}{x_2} - \frac{x_1dx_2}{x_2^2} \\
+   &= r\frac{dx_1}{x_1} - r\frac{dx_2}{x_2} \\
+\end{align*}
+%
+so
+%
+\begin{align*}
+& \frac{dr}{r} = \frac{dx_1}{x_1} - \frac{dx_2}{x_2}
+\end{align*}
+
+Compute standard error as a square root of variance. Variance of sum of independent variables is 
+
+$$
+V(ax_1+bx_2) = a^2V(x_1) + b^2V(x_2)
+$$
+
+In our case
+
+\begin{align*}
+\frac{\Delta r}{r} = \sqrt{\left( \frac{\Delta x_1}{x_1} \right)^2 + \left( \frac{\Delta x_2}{x_2} \right)^2}
+\end{align*}
+
+\section{Error on $N_{pe}$}
+
+Given we fitted the amplitude spectrum with a Gaussian with mean $\mu$ and width $\sigma$, the number of photoelectrons can be estimated as 
+$$
+N_{pe} \approx \frac{A}{(\sigma/\mu)^2} \\
+$$
+here $A$ is an normalizing coefficient which we assume to be equal to 1.
+
+Find uncertainty on the square of the ratio.
+%
+\begin{align*}
+%-- I'm using & to left align the lines (default is right aligning)
+& N_{pe} = (\mu/\sigma)^2 \\
+& \frac{\partial N_{pe}}{\partial \mu} \Delta\mu = 2N_{pe} \frac{1}{\sigma} \Delta\mu 
+= 2N_{pe}^2 \frac{\Delta\mu}{\mu}  \\
+& \frac{\partial N_{pe}}{\partial \sigma} \Delta\sigma = -2N_{pe} \frac{\mu}{\sigma^2} \Delta\sigma
+=  2N_{pe}^2 \frac{\Delta\sigma}{\sigma}
+\end{align*}
+%
+For variance we have
+%
+\begin{align*}
+V[N_{pe}] = \left( 2N_{pe}\right)^2
+\left[
+\left( \frac{\Delta\mu}{\mu} \right)^2 + \left( \frac{\Delta\sigma}{\sigma} \right)^2
+\right]
+\end{align*}
+%
+Finally, an error on $N_{pe}$ is
+%
+\begin{align*}
+\Delta N_{pe} = 2N_{pe}\sqrt{\left( \frac{\Delta\mu}{\mu} \right)^2 + \left( \frac{\Delta\sigma}{\sigma} \right)^2}
+\end{align*}
+
+\end{document}

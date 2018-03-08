@@ -1,0 +1,209 @@
+//-- Sat Apr 7 00:30:59 PDT 2012
+.x hgaus.C+
+.q
+//-- Sat Apr 7 00:42:36 PDT 2012
+.x hgaus.C+
+.q
+//-- Sat Apr 7 00:43:10 PDT 2012
+.x hgaus.C+
+.q
+//-- Sat Apr 7 00:43:35 PDT 2012
+.x hgaus.C+
+.q
+//-- Sat Apr 7 01:24:01 PDT 2012
+.x hgaus.C+
+colors()
+.q
+//-- Sat Apr 7 01:25:01 PDT 2012
+.x hgaus.C+
+//-- Sat Apr 7 09:00:16 PDT 2012
+.x hgaus.C+
+sqrt(2*TMath::Pi())
+2.5*198.2*0.993
+2.5*198.2*0.993 / 2
+2.5*198.2*0.993 / 0.5
+2.51*198.2*0.993 / 0.5
+2.5066*198.2*0.993 / 0.5
+.q
+//-- Sat Apr 7 12:05:57 PDT 2012
+.x hgaus.C+
+.q
+//-- Sat Apr 7 12:06:17 PDT 2012
+.x hgaus.C+
+.q
+//-- Sat Apr 7 12:15:28 PDT 2012
+.x hgaus.C+
+.q
+//-- Sat Apr 7 12:15:43 PDT 2012
+.x hgaus.C+
+.q
+//-- Sat Apr 7 12:17:34 PDT 2012
+.x hgaus.C+
+.x hgaus.C+
+.q
+//-- Sat Apr 7 12:18:53 PDT 2012
+.x hgaus.C+
+.q
+//-- Sat Apr 7 12:20:14 PDT 2012
+.x hgaus.C+
+.q
+//-- Sat Apr 7 12:23:55 PDT 2012
+.x hgaus.C+
+110*1.01
+.q
+//-- Sun Apr 8 12:05:31 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun Apr 8 12:05:52 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun Apr 8 12:07:41 PDT 2012
+.x hgaus.C+
+100./2.72
+100. - 100./2.72
+100. - 100./2.72
+.x hgaus.C+
+.x hgaus.C+
+.x hgaus.C+
+.x hgaus.C+
+.x hgaus.C+
+.x hgaus.C+
+.x hgaus.C+
+.q
+//-- Sun Apr 8 12:29:14 PDT 2012
+.x hgaus.C+
+//-- Sun Apr 8 12:30:40 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun Apr 8 12:33:10 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun Apr 8 12:34:05 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun Apr 8 12:34:44 PDT 2012
+.x hgaus.C+
+100./sqrt(2.72)
+.q
+//-- Mon Apr 9 10:52:37 PDT 2012
+.x hgaus.C+
+.q
+//-- Mon Apr 9 10:54:19 PDT 2012
+.x hgaus.C+
+.x hgaus.C+
+//-- Mon Apr 9 10:57:46 PDT 2012
+.x hgaus.C+
+100. - 100./2.72
+100./exp(0.5)
+//-- Sat May 26 22:42:07 PDT 2012
+.x hgaus.C+
+.x hgaus.C+
+TF1* fint_gaus = new TF1("fint_gaus", "[0] * 0.5*(1.+TMath::Erf((x-[1])/(TMath::Sqrt(2)*[2]))", -5,5);
+.x hgaus.C+
+//-- Sat May 26 23:24:02 PDT 2012
+.x hgaus.C+
+.x hgaus.C+
+.q
+//-- Sat May 26 23:30:48 PDT 2012
+.x hgaus.C+
+.q
+//-- Sat May 26 23:34:05 PDT 2012
+.x hgaus.C+
+.q
+//-- Sat May 26 23:34:52 PDT 2012
+.x hgaus.C+
+.q
+//-- Sat May 26 23:36:49 PDT 2012
+.x hgaus.C+
+//-- Sat May 26 23:38:15 PDT 2012
+.x hgaus.C+
+//-- Sat May 26 23:38:34 PDT 2012
+.x hgaus.C+
+.q
+//-- Sat May 26 23:40:11 PDT 2012
+.x hgaus.C+
+//-- Sat May 26 23:42:04 PDT 2012
+.x hgaus.C+
+//-- Sat May 26 23:42:37 PDT 2012
+.x hgaus.C+
+//-- Sat May 26 23:43:40 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 12:02:01 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 12:02:34 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 12:03:54 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 12:07:28 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 12:08:46 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 12:09:15 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 12:09:46 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 12:10:38 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 12:38:27 PDT 2012
+.x hgaus.C+
+//-- Sun May 27 12:39:07 PDT 2012
+.x hgaus.C+
+//-- Sun May 27 12:43:22 PDT 2012
+.x hgaus.C+
+//-- Sun May 27 12:44:09 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 12:50:09 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 12:51:08 PDT 2012
+.x hgaus.C+
+//-- Sun May 27 12:51:50 PDT 2012
+.x hgaus.C+
+//-- Sun May 27 13:00:44 PDT 2012
+.x hgaus.C+
+.x hgaus.C+
+//-- Sun May 27 13:03:39 PDT 2012
+.x hgaus.C+
+//-- Sun May 27 13:07:33 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 13:08:40 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 13:18:24 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 13:28:05 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 13:29:17 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 13:29:34 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 13:48:52 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 13:50:16 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 13:57:48 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 13:58:36 PDT 2012
+.x hgaus.C+
+.q
+//-- Sun May 27 14:30:50 PDT 2012
+.x hgaus.C+
+.q
