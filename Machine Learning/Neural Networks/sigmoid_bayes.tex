@@ -1,7 +1,8 @@
 \author{Andriy Zatserklyaniy, zatserkl@fnal.gov}
-\documentclass[english]{article}
+\documentclass[english, 12pt]{article}
 \usepackage{babel}
 \usepackage{amsmath}
+\usepackage[margin=0.75in]{geometry} % AZ: much better now
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}   % encoding ISO-8859-9
 \usepackage{graphicx}
@@ -23,11 +24,14 @@
 
 \begin{document}
 
-\title{Derivation of Sigmoid Function from Bayes Inference}
+\title{Derivation of Sigmoid Function from Bayes' Inference}
 
 \maketitle
 
 \section{Bayes' Theorem}
+
+Disclaimer: This is an explanation in my own words. 
+For details see well-written article \cite{Renals2014}.
 
 Let us assume that there are only two classes(hypotheses) of events: $C_1$ and $C_2$. 
 Event $x$ has been occurred. 
@@ -161,5 +165,14 @@ S \approx 2.5 \cdot 198.2 \cdot 0.993 = 492.0 \\
 \intertext{the number of events for $w$ = 0.5~MeV}
 N \approx 2.5 \cdot 198.2 \cdot 0.993 / 0.5  = 984.1 \\
 \end{align*}
+
+\begin{thebibliography}{9}
+    
+\bibitem{Renals2014}
+Steve Renals,
+\textit{Multi-Layer Neural Networks},
+url={https://www.inf.ed.ac.uk/teaching/courses/asr/2013-14/asr08a-nnDetails.pdf}
+    
+\end{thebibliography}
 
 \end{document}
